@@ -1,4 +1,3 @@
-[TOC]
 # Frontend Compiler Examples
 ## test_complier.py
 Usage: main.py platform model_path [optional]

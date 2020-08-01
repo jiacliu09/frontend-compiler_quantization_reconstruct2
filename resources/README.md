@@ -36,8 +36,7 @@ If forntend compilation complete successfully, all Moffett IR graphs and params 
 
 
 ## test_quantize_error.py
-
-    该脚本主要演示量化过程中逐层的精度变化，最终并比较与非量化之间的差异
+    a demo for test quantization error
     -h, --help            show this help message and exit
     -c CONFIG_FILE, --config-file CONFIG_FILE
                         quantization config
@@ -52,7 +51,7 @@ If forntend compilation complete successfully, all Moffett IR graphs and params 
 
 
 ## test_imagenet_quantize_acc.py
-    主要演示同一个模型在不同量化参数下精度的变化
+    a demo for test model performance on imagenet dataset after quantization 
     -h, --help            show this help message and exit
     -c CONFIG_FILE, --config-file CONFIG_FILE
                         quantization config
@@ -62,7 +61,7 @@ If forntend compilation complete successfully, all Moffett IR graphs and params 
                         CModel params path
 
 ## test_tensorflow_recostructor.py
-    演示tensorflow graph重构并且验证正确性
+    a demo for reconstructing tensorflow model for inference
     -h, --help            show this help message and exit
     -g GRAPH, --graph GRAPH
                         graph json
@@ -78,14 +77,14 @@ If forntend compilation complete successfully, all Moffett IR graphs and params 
     --shape SHAPE
 
 ## test_tensorflow_recostructor_train.py
-    演示重构一个tensorflow training graph并且验证正确性
+    a demo for reconstructing tensorflow model for training 
     -h, --help            show this help message and exit
     -g GRAPH, --graph GRAPH
                         graph json
     -p PARAMS, --params PARAMS
                         params file
 ## test_pytorch_reconstructor.py
-    演示重构一个pytorch model 并验证正确性
+    a demo for reconstruct a pytorch model
     -h, --help            show this help message and exit
     -g GRAPH, --graph GRAPH
                         graph json
@@ -97,7 +96,7 @@ If forntend compilation complete successfully, all Moffett IR graphs and params 
                         result numpy to compare reconstructor result
 
 ## test_gluoncv_centernet_rt.py
-    演示在tensorflow中导入mxnet centernet， 并展示最终结果
+    a demo for convert centernet in mxnet to tensorflow
     -h, --help            show this help message and exit
     -g GRAPH, --graph GRAPH
                         graph json

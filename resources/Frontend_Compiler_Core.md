@@ -1,4 +1,3 @@
-[TOC]
 # Frontend Compiler Core 
 ## Compiler
 
