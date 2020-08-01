@@ -102,7 +102,7 @@ src include the source codes for compiler，quantization，reconstructor，utils
 
 ### step 1: get original model
 
-we use gluoncv resnet50v1b (top1=77.67 on imagenet) as an example here
+[we use gluoncv resnet50v1b (top1=77.67 on imagenet) as an example here](https://drive.google.com/drive/folders/1Rz0Z6UQbypHeVxr8lNAwef0n-MVYDZfM?usp=sharing)
 
 ### step 2: prune the dense network using the [sparse tools](https://github.com/jiacliu09/PruningTools) provided by Moffett AI
 
