@@ -188,23 +188,5 @@ EVALUATION:
     output_node: '506:0'
 SAVE_PATH: 'pbs/resnet50_v1b_quan.pb'
 ```
-- MODEL
-    - graph: moffett ir for cmodel graph file
-    - params: moffett ir for cmodel params file
-- QUAN
-    - strategy:
-        - minmax:
-        - null:
-        - scale_shift:
-        - symmetry_max:
-        - {strategy}_t:
-    - table: table to save calibration results
-    - image_path: image path for calibrition
-- EVALUATION
-    - input_node: graph node 0
-    - output_node: graph node last
-    - input_image: evaluation images
-    - label_file: imagenet label file
-    - image_file: imagenet image list file
-- SAVE_PATH: quantization pb save path
+
 
