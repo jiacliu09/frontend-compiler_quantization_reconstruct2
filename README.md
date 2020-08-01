@@ -104,22 +104,7 @@ src include the source codes for compiler，quantization，reconstructor，utils
 
 [we use gluoncv resnet50v1b (top1=77.67 on imagenet) as an example here](https://drive.google.com/drive/folders/1Rz0Z6UQbypHeVxr8lNAwef0n-MVYDZfM?usp=sharing)
 
-### step 2: prune the dense network using the [sparse tools](https://github.com/jiacliu09/PruningTools) provided by Moffett AI
-
-| model        | sparse rate | acc top1 | input size |
-| ------------ | ----------- | -------- | ----------- |
-| resnet50 v1b | 0           | 77.7    | 224 x 224 |
-| resnet50 v1b | 93.75       | 74.1    | 224 x 224 |
-
-The checkpoint can be saved as follows:
-```
-resnet50v1b/
-|-─ original
-    ├── resnet50v1b-0000.params
-    └── resnet50v1b-symbol.json
-```
-
-### step 3: frontend model compiler test
+### step 2: frontend model compiler test
 compile the sparse mxnet model into moffett IR
 
 ``` python examples/test_complier.py mxnet models/resnet50v1b/resnet50v1b --epoch 0 ```
@@ -134,7 +119,7 @@ Moffett IR will be saved in the folder `./moffett_ir`
 └── IR_fused_for_CModel_params.npz
 ```
 
-### step 4: model complexity
+### step 3: model complexity
 For the given model, calcualte the non-zeros, sparsity, dense flops, sparse flops
 ```
 python examples/test_model_complexity.py
@@ -143,7 +128,7 @@ python examples/test_model_complexity.py
 ```
 nnz: 3522685, sparsity: 0.8618712639560533, dense_flops: 3948251920.0, sparse_flops: 357813835.0
 
-### step 5: reconstructor test
+### step 4: reconstructor test
 Convert Moffett IR to pytorch, tensorflow models for training and inference, input.npy and result.npy produced by original framework
 ```
 In pytorch:
@@ -164,7 +149,7 @@ python examples/test_tensorflow_reconstructor.py
         --save_path tf_reconstruct.pb
 ```
 
-### step 6: Quantization test
+### step 5: Quantization test
 Layer-wise comparison of feature maps before and after quantization. The smaller the cosine distance, the better quantization is achieved.
 
 ```
