@@ -126,7 +126,7 @@ python examples/test_model_complexity.py
         --graph moffett_ir/IR_for_reconstruct_graph.json
         --params moffett_ir/IR_for_reconstruct_params.npz
 ```
-nnz: 3522685, sparsity: 0.8618712639560533, dense_flops: 3948251920.0, sparse_flops: 357813835.0
+nnz: 25497051, sparsity: 0.00022981689306700304, dense_flops: 3948251920.0, sparse_flops: 3941910018.0
 
 ### step 4: reconstructor test
 Convert Moffett IR to pytorch, tensorflow models for training and inference, input.npy and result.npy produced by original framework
