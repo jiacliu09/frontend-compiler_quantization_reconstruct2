@@ -194,7 +194,7 @@ SAVE_PATH: 'pbs/resnet50_v1b_quan.pb'
 ```
 python examples/test_imagenet_quantize_acc.py --config-file configs/resnet50_v1b.yml
 ```
-| model          |  top 1 before/after quantization |
-| -------------- | ------------- | -------- | ----- | -------------------- |
+| model |  top 1 before/after quantization |
+| --- | --- |
 | resnet50 v1b   |  0.765 /        |
 
