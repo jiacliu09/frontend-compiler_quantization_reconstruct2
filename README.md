@@ -196,5 +196,5 @@ python examples/test_imagenet_quantize_acc.py --config-file configs/resnet50_v1b
 ```
 | model |  top 1 before/after quantization |
 | --- | --- |
-| resnet50 v1b   |  0.765 /        |
+| resnet50 v1b   |  0.786 / 0.779      |
 
