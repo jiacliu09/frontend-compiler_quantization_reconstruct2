@@ -150,6 +150,19 @@ python examples/test_tensorflow_reconstructor.py
 ```
 
 ### step 5: Quantization test
+
+Quantization calibration to get the calibration file
+
+```
+python examples/test_calibration.py 
+    -graph moffett_ir/IR_fused_for_CModel_graph.json 
+    -param moffett_ir/IR_fused_for_CModel_params.npz 
+    -input models/images/calibration 
+    -ppc configs/mxnet_imagenet_trans.json 
+    -o calibrations/resnet50_v1b.json  
+    --use-kl
+```
+
 Layer-wise comparison of feature maps before and after quantization. The smaller the cosine distance, the better quantization is achieved.
 
 ```
