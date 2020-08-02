@@ -157,7 +157,7 @@ Quantization calibration to get the calibration file
 python examples/test_calibration.py 
     -graph moffett_ir/IR_fused_for_CModel_graph.json 
     -param moffett_ir/IR_fused_for_CModel_params.npz 
-    -input models/images/calibration 
+    -input /path/to/your/calibration/images 
     -ppc configs/mxnet_imagenet_trans.json 
     -o calibrations/resnet50_v1b.json  
     --use-kl
