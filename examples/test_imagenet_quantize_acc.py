@@ -98,19 +98,19 @@ def test_quantizations(json_graph, params, config, model_name):
     # config.acc = acc
     # results[model_name].append(deepcopy(config))
 
-    # config.QUAN.strategy = 'symmetry_max'
-    # config.QUAN.qconfig.weight_quan = 'perlayer'
-    # acc = evalate(json_graph, params, config)
-    # config.acc = acc
-    # results[model_name].append(deepcopy(config))
-    # print(results)
-
-    config.QUAN.strategy = 'symmetry_max_t'
+    config.QUAN.strategy = 'symmetry_max'
     config.QUAN.qconfig.weight_quan = 'perlayer'
     acc = evalate(json_graph, params, config)
     config.acc = acc
     results[model_name].append(deepcopy(config))
     print(results)
+
+    #config.QUAN.strategy = 'symmetry_max_t'
+    #config.QUAN.qconfig.weight_quan = 'perlayer'
+    #acc = evalate(json_graph, params, config)
+    #config.acc = acc
+    #results[model_name].append(deepcopy(config))
+    #print(results)
 
     # config.QUAN.strategy = 'symmetry_max'
     # config.QUAN.qconfig.weight_quan = 'perchannel'
