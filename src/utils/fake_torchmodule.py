@@ -210,6 +210,17 @@ class FakeCast(FakeBaseModule):
         else:
             raise
 
+class FakePad(FakeBaseModule):
+    def __init__(self, node, params):
+        super(FakePad, self).__init__(node, params)
+        self.pad_top, self.pad_bot = self.attrs['pad_width'][2]
+        self.pad_left, self.pad_rigth = self.attrs['pad_width'][3]
+
+
+    def forward(self, x):
+        return nn.functional.pad(x, (self.pad_left, self.pad_rigth, self.pad_top, self.pad_bot))
+
+
 
 module_factory = {
 'Const': FakeBaseModule,
@@ -229,4 +240,5 @@ module_factory = {
 'nn.upsampling': FakeUpsample,
 'equal': FakeEqual,
 'cast': FakeCast,
+'nn.pad': FakePad,
 }
