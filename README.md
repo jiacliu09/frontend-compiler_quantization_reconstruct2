@@ -183,10 +183,18 @@ QUAN:
 EVALUATION:
     input_images: './models/image_for_compare'
     label_file: 'models/imagenet_lsvrc_2015_synsets.txt'
-    image_file: 'models/imagenet_5000test.list'
+    image_file: 'models/imagenet_fulltest.list'
     input_node: '0:0'
     output_node: '506:0'
 SAVE_PATH: 'pbs/resnet50_v1b_quan.pb'
 ```
 
+### step 6: test quantization accuracy on imagenet dataset 
+
+```
+python examples/test_imagenet_quantize_acc.py --config-file configs/resnet50_v1b.yml
+```
+| model          |  top 1 before/after quantization |
+| -------------- | ------------- | -------- | ----- | -------------------- |
+| resnet50 v1b   |  0.765 /        |
 
