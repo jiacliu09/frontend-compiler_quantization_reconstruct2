@@ -192,11 +192,11 @@ QUAN:
     qconfig:
         weight_quan: 'perlayer' # perchannel , perlayer
         table: 'calibrations/resnet50_v1b.json'
-        image_path: './models/image_for_calibrate'
+        image_path: '/path/to/your/calibration/images'
 EVALUATION:
-    input_images: './models/image_for_compare'
-    label_file: 'models/imagenet_lsvrc_2015_synsets.txt'
-    image_file: 'models/imagenet_fulltest.list'
+    input_images: '/path/to/your/evaluation/images'
+    label_file: 'resources/imagenet_lsvrc_2015_synsets.txt'
+    image_file: 'resources/imagenet_fulltest.list'
     input_node: '0:0'
     output_node: '506:0'
 SAVE_PATH: 'pbs/resnet50_v1b_quan.pb'
